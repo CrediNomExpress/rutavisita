@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RutaVisita | Control de visitas</title>
+
+  <meta name="description" content="Sistema personal para organizar domicilios, visitas y rutas de transporte público.">
+  <meta name="theme-color" content="#123b67">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon">RV</span>
+      <div>
+        <h1>RutaVisita</h1>
+        <p>Organiza tus visitas, optimiza tu recorrido</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="summary">
+      <h2>Panel de visitas</h2>
+      <p>Tu jornada, organizada en un solo lugar.</p>
+
+      <div class="summary-grid">
+        <article class="summary-card">
+          <span id="total-visits">0</span>
+          <p>Total</p>
+        </article>
+
+        <article class="summary-card">
+          <span id="pending-visits">0</span>
+          <p>Pendientes</p>
+        </article>
+
+        <article class="summary-card">
+          <span id="completed-visits">0</span>
+          <p>Visitados</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Registrar domicilio</h2>
+
+      <form id="visit-form">
+        <label for="person">Nombre o referencia</label>
+        <input
+          type="text"
+          id="person"
+          placeholder="Nombre de la persona"
+          required
+        >
+
+        <label for="address">Domicilio</label>
+        <textarea
+          id="address"
+          placeholder="Calle, número, colonia, municipio"
+          required
+        ></textarea>
+
+        <label for="phone">Teléfono (opcional)</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Teléfono de contacto"
+        >
+
+        <label for="status">Estado de la visita</label>
+        <select id="status">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Visitado">Visitado</option>
+          <option value="No localizado">No localizado</option>
+          <option value="Seguimiento">Seguimiento</option>
+          <option value="Reprogramado">Reprogramado</option>
+        </select>
+
+        <label for="notes">Observaciones</label>
+        <textarea
+          id="notes"
+          placeholder="Anota información importante"
+        ></textarea>
+
+        <button type="submit">Guardar domicilio</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Mis visitas</h2>
+
+      <div class="filters">
+        <label for="filter-status">Filtrar por estado</label>
+        <select id="filter-status">
+          <option value="Todas">Todas</option>
+          <option value="Pendiente">Pendientes</option>
+          <option value="Visitado">Visitados</option>
+          <option value="No localizado">No localizados</option>
+          <option value="Seguimiento">Seguimiento</option>
+          <option value="Reprogramado">Reprogramados</option>
+        </select>
+      </div>
+
+      <div id="visits-list">
+        <p class="empty-message">
+          Todavía no tienes domicilios registrados.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Control de transporte</h2>
+
+      <label for="transport-cost">Gasto de transporte del día ($)</label>
+      <input
+        type="number"
+        id="transport-cost"
+        min="0"
+        step="0.50"
+        placeholder="Ej. 50"
+      >
+
+      <button type="button" id="save-expense">
+        Guardar gasto
+      </button>
+
+      <p id="expense-summary">Gasto registrado: $0.00</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>RutaVisita · Gestión personal de recorridos</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
