@@ -1,0 +1,24 @@
+
+{
+  "name": "RutaVisita",
+  "short_name": "RutaVisita",
+  "description": "Sistema de organización y seguimiento de visitas a domicilio.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7fb",
+  "theme_color": "#123b67",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
