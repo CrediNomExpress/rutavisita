@@ -1,0 +1,343 @@
+
+/* =====================================
+   RUTAVISITA - Diseño principal
+   Optimizado para Android
+===================================== */
+
+:root {
+  --navy: #123b67;
+  --blue: #1769aa;
+  --blue-light: #eaf3fc;
+  --background: #f3f6fa;
+  --white: #ffffff;
+  --text: #243447;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --green: #168653;
+  --yellow: #d99a16;
+  --red: #d64545;
+  --gray: #788391;
+  --shadow: 0 4px 18px rgba(25, 55, 90, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ENCABEZADO */
+
+.app-header {
+  background: linear-gradient(135deg, #123b67, #1769aa);
+  color: var(--white);
+  padding: 25px 18px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-size: 23px;
+  letter-spacing: 0.3px;
+}
+
+.brand p {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* CONTENEDOR */
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px 15px 35px;
+}
+
+/* PANEL DE RESUMEN */
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.summary h2 {
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+
+.summary > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.summary-card {
+  background: var(--white);
+  border-radius: 13px;
+  padding: 16px 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.summary-card span {
+  display: block;
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.summary-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* TARJETAS */
+
+.panel {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px 17px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 17px;
+}
+
+/* FORMULARIOS */
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 13px 0 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  min-height: 47px;
+  padding: 12px;
+  border: 1px solid #d5deea;
+  border-radius: 10px;
+  background: #fbfcfe;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(23,105,170,0.12);
+  background: var(--white);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0aaba;
+}
+
+/* BOTONES */
+
+button {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 11px;
+  margin-top: 17px;
+  padding: 12px 16px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:hover {
+  background: var(--navy);
+}
+
+/* FILTROS */
+
+.filters {
+  margin-bottom: 15px;
+}
+
+/* LISTADO DE VISITAS */
+
+#visits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-message {
+  padding: 20px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+/* TARJETA DE CADA DOMICILIO */
+
+.visit-card {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--yellow);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(25,55,90,0.04);
+}
+
+.visit-card h3 {
+  font-size: 16px;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.visit-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+
+/* COLORES DE ESTADOS */
+
+.status-pendiente {
+  border-left-color: var(--yellow);
+}
+
+.status-visitado {
+  border-left-color: var(--green);
+}
+
+.status-no-localizado {
+  border-left-color: var(--red);
+}
+
+.status-seguimiento {
+  border-left-color: var(--blue);
+}
+
+.status-reprogramado {
+  border-left-color: var(--gray);
+}
+
+/* RESUMEN DE GASTOS */
+
+#expense-summary {
+  margin-top: 15px;
+  padding: 13px;
+  background: var(--blue-light);
+  color: var(--navy);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  text-align: center;
+  padding: 20px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* PANTALLAS GRANDES */
+
+@media (min-width: 700px) {
+  .container {
+    padding: 30px 22px 45px;
+  }
+
+  .app-header {
+    padding: 30px 25px;
+  }
+
+  .panel {
+    padding: 25px;
+  }
+
+  .summary-card {
+    padding: 20px;
+  }
+
+  .summary-card span {
+    font-size: 32px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
