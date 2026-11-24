@@ -191,7 +191,7 @@ textarea::placeholder {
   color: #a0aaba;
 }
 
-/* BOTONES */
+/* BOTONES GENERALES */
 
 button {
   display: block;
@@ -240,7 +240,7 @@ button:hover {
   border-radius: 10px;
 }
 
-/* TARJETA DE CADA DOMICILIO */
+/* TARJETAS DE DOMICILIOS */
 
 .visit-card {
   padding: 15px;
@@ -284,6 +284,38 @@ button:hover {
 
 .status-reprogramado {
   border-left-color: var(--gray);
+}
+
+/* ENLACE A GOOGLE MAPS */
+
+.map-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #eaf3fc;
+  color: #123b67;
+  padding: 13px;
+  margin-top: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.map-link:active {
+  background: #d5e8fa;
+}
+
+/* BOTÓN PARA ELIMINAR DOMICILIOS */
+
+.visit-card .delete-visit {
+  background: #fff0f0;
+  color: #b83232;
+  border: 1px solid #f2cccc;
+  margin-top: 10px;
+}
+
+.visit-card .delete-visit:hover {
+  background: #ffe0e0;
 }
 
 /* RESUMEN DE GASTOS */
