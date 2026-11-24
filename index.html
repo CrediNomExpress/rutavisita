@@ -142,5 +142,17 @@
   </footer>
 
   <script src="app.js"></script>
+  
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then(() => console.log("RutaVisita: modo PWA activado"))
+        .catch((error) => console.error("Error PWA:", error));
+    });
+  }
+</script>
+
 </body>
 </html>
